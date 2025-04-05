@@ -18,6 +18,11 @@ function calculateMonthlyPayment($principal, $numMonth, $rate) {
     return $principal * $r * $onePlusRN / ($onePlusRN - 1);
 
 }
+function calculateTotalPayment($principal, $numMonth, $rate) {
+
+    return $numMonth * calculateMonthlyPayment($principal, $numMonth, $rate);
+
+}
 
 // define a function called calculateTotalPayment
 // it takes the same arguments as the one from above
@@ -25,7 +30,11 @@ function calculateMonthlyPayment($principal, $numMonth, $rate) {
 // and then multiply it by number of months
 // then returns the value
 
+function calculateTotalInterest($principal, $numMonth, $rate) {
 
+    return calculateTotalPayment($principal, $numMonth, $rate) - $principal;
+
+}
 // define a function called calculateTotalInterest
 // it takes the same arguments as the one from above
 // it calls calculateTotalPayment
